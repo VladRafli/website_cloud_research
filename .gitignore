@@ -1,0 +1,10 @@
+# Ignore cursed folder
+
+/client
+
+# Ignore other file in base directory
+
+*.png
+*.docx
+*.pdf
+*.txt
