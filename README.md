@@ -2,6 +2,22 @@
 
 This repository for research purpose to create a client website for front-end interface and server API for fetching data from database and data processing and upload it on makeshift cloud server with Docker and Kubernetes.
 
+Client created with React JS, Server created with Express JS
+
+Package used in this project:
+
+- react
+- react-dom
+- react-head
+- @fortawesome/fontawesome-svg-core
+- @fortawesome/free-brands-svg-icons
+- @fortawesome/free-solid-svg-icons
+- express
+- mysql
+- cors
+- morgan
+- dotenv
+
 No more description. Thank you!
 
 **Licensed under MIT License**
