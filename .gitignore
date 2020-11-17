@@ -1,6 +1,7 @@
 # Ignore cursed folder
 
 /client
+/Simple\ Recipe\ App\ With\ React
 
 # Ignore other file in base directory
 
@@ -8,3 +9,4 @@
 *.docx
 *.pdf
 *.txt
+*.rar

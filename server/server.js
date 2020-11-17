@@ -51,10 +51,9 @@ app.get('/', (req, res) => {
 
 // Get Request
 app.get('/get', (req, res) => {
-    let sql = 'SELECT * FROM test_table';
+    let sql = 'SELECT * FROM blog_posts';
     db.query(sql, (err, result) => {
         if (err) {res.status(404).json({ Error: err })};
-
         res.status(200).json({
             message: 'Data succesfully recieved',
             result: result
@@ -63,7 +62,7 @@ app.get('/get', (req, res) => {
 });
 // Post Request
 app.post('/post', (req, res) => {
-    const { title, body } = req.body;
+    const {post_image, post_title, post_body, post_author} = req.body
     var pad = function(num) { return ('00'+num).slice(-2) };
     let date = new Date();
     date = date.getUTCFullYear()    + '-' +
@@ -72,38 +71,14 @@ app.post('/post', (req, res) => {
         pad(date.getUTCHours())     + ':' +
         pad(date.getUTCMinutes())   + ':' +
         pad(date.getUTCSeconds());
+    image_link = encodeURIComponent(post_image)
+    
 
-
-    let sql = `INSERT INTO test_table (title, body, date) VALUES ('${title}', '${body}', '${date}')`
+    let sql = `INSERT INTO blog_posts (post_image, post_title, post_body, post_author, post_date_posted) VALUES ('${image_link}', '${post_title}', '${post_body}', '${post_author}', '${date}')`
     db.query(sql, [req.body], (err, result) => {
-        if (err) {res.status(400).json({ Error: err })};
+        if (err) {res.status(400).json({ Error: err, Link: image_link })};
         res.status(201).json({
             message: 'Data succesfully posted',
-            result: result
-        });
-    });
-});
-// Delete Request
-app.delete('/del/:id', (req, res) => {
-    let sql = 'DELETE FROM test_table WHERE id = ?';
-    db.query(sql, [req.params.id], (err, result) => {
-        if (err) {res.status(400).json({ Error: err })};
-        res.status(200).json({
-            message: 'Data succesfully deleted',
-            result: result
-        });
-    });
-});
-// Update Request
-app.put('/up/:id', (req, res) => {
-    const id = req.params.id;
-    const { title, body } = req.body;
-
-    db.query('UPDATE test_table SET title = ?, body = ? WHERE id = ?', [title, body, id],
-    (err, result, fields) => {
-        if (err) throw err;
-        res.status(201).json({
-            message: 'Data succesfully updated',
             result: result
         });
     });
