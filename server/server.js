@@ -34,6 +34,31 @@ db.connect(err => {
     if (err) throw err;
     console.log('Database is successfully connected!');
 });
+// Handle Database Disconnection
+var connection;
+
+function handleDisconnect() {
+  connection = mysql.createConnection({
+    host: 'host.docker.internal',
+    user: 'root',
+    password: '',
+    database: 'database_research',
+});
+  connection.connect(function(err) {
+    if (err) throw err;
+    console.log('Database is successfully connected!');
+  });                                     
+  connection.on('error', function(err) {
+    console.log('db error', err);
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') {
+      handleDisconnect();                         
+    } else {                                     
+      throw err;                                  
+    }
+  });
+}
+
+handleDisconnect();
 // Cors
 app.use(cors());
 // Morgan Logger
