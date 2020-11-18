@@ -25,10 +25,10 @@ const app = express();
 app.use(express.static(__dirname));
 // Database
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'host.docker.internal',
     user: 'root',
     password: '',
-    database: 'database_research'
+    database: 'database_research',
 });
 db.connect(err => {
     if (err) throw err;

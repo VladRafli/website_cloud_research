@@ -1,0 +1,16 @@
+CREATE TABLE blog_posts (
+    post_id INT NOT NULL,
+    post_image VARCHAR(200),
+    post_title VARCHAR(100),
+    post_body VARCHAR(350),
+    post_author VARCHAR(100),
+    post_date_posted DATETIME
+);
+
+INSERT INTO blog_posts (post_id, post_image, post_title, post_body, post_author, post_date_posted)
+VALUES
+    (1, "https%3A%2F%2Fimages.pexels.com%2Fphotos%2F57007%2Fpexels-photo-57007.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940", "Research Team Confused Implementing Makeshift Cloud With Raspberry Pi 4", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ut quibusdam voluptatibus nulla praesentium nobis itaque cumque ipsam, obcaecati, fuga quidem earum, voluptas maiores mollitia! Hic officia, atque necessitatibus quam doloremque quo recusandae quia quos suscipit molestias enim eos alias porro non adipisci eaque molestiae doloribus. R","FYRF Research Team", "2020-11-15 07:37:48"),
+    (2, "https%3A%2F%2Fimages.pexels.com%2Fphotos%2F2102416%2Fpexels-photo-2102416.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940", "What is Docker and Why Docker is Great", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ut quibusdam voluptatibus nulla praesentium nobis itaque cumque ipsam, obcaecati, fuga quidem earum, voluptas maiores mollitia! Hic officia, atque necessitatibus quam doloremque quo recusandae quia quos suscipit molestias enim eos alias porro non adipisci eaque molestiae doloribus. R", "FYRF Research Team", "2020-11-15 07:47:53"),
+    (3, "https%3A%2F%2Fimages.pexels.com%2Fphotos%2F1181675%2Fpexels-photo-1181675.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940", "What is Kubernetes and Why Kubernetes is Great", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ut quibusdam voluptatibus nulla praesentium nobis itaque cumque ipsam, obcaecati, fuga quidem earum, voluptas maiores mollitia! Hic officia, atque necessitatibus quam doloremque quo recusandae quia quos suscipit molestias enim eos alias porro non adipisci eaque molestiae doloribus. R", "FYRF Research Team", "2020-11-15 07:48:40"),
+    (4, "https%3A%2F%2Fimages.pexels.com%2Fphotos%2F325229%2Fpexels-photo-325229.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940", "Introducing New Data Center in Indonesia", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ut quibusdam voluptatibus nulla praesentium nobis itaque cumque ipsam, obcaecati, fuga quidem earum, voluptas maiores mollitia! Hic officia, atque necessitatibus quam doloremque quo recusandae quia quos suscipit molestias enim eos alias porro non adipisci eaque molestiae doloribus. R", "FYRF Research Team", "2020-11-15 07:55:37"),
+    (5, "https%3A%2F%2Fimages.pexels.com%2Fphotos%2F1714208%2Fpexels-photo-1714208.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940", "How to Install Docker in your PC", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ut quibusdam voluptatibus nulla praesentium nobis itaque cumque ipsam, obcaecati, fuga quidem earum, voluptas maiores mollitia! Hic officia, atque necessitatibus quam doloremque quo recusandae quia quos suscipit molestias enim eos alias porro non adipisci eaque molestiae doloribus. R", "FYRF Research Team", "2020-11-15 07:56:37");
