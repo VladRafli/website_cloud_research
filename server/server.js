@@ -23,34 +23,23 @@ const PORT = 5000 || process.env.PORT;
 const app = express();
 // Run Express Static Page
 app.use(express.static(__dirname));
-// Database
-const db = mysql.createConnection({
-    host: 'host.docker.internal',
-    user: 'root',
-    password: '',
-    database: 'database_research',
-});
-db.connect(err => {
-    if (err) throw err;
-    console.log('Database is successfully connected!');
-});
-// Handle Database Disconnection
-var connection;
-
+// Handle Database Connection
+var db;
 function handleDisconnect() {
-  connection = mysql.createConnection({
+  db = mysql.createConnection({
     host: 'host.docker.internal',
     user: 'root',
     password: '',
     database: 'database_research',
 });
-  connection.connect(function(err) {
-    if (err) throw err;
+  db.connect(function(err) {
+    if (err) console.log('Error: ', err);;
     console.log('Database is successfully connected!');
   });                                     
-  connection.on('error', function(err) {
-    console.log('db error', err);
+  db.on('error', function(err) {
+    console.log('Error: ', err);
     if(err.code === 'PROTOCOL_CONNECTION_LOST') {
+      console.log("Re-establishing connection to Database!");
       handleDisconnect();                         
     } else {                                     
       throw err;                                  
