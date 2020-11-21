@@ -6,10 +6,6 @@
 
 /Simple\ Recipe\ App\ With\ React
 
-# Ignore Unused Folder
-
-/web-server
-
 # Ignore other file in base directory
 
 *.png
